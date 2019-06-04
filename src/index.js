@@ -11,10 +11,10 @@ import {
   ScrollView,
   Dimensions,
   TouchableOpacity,
-  ViewPagerAndroid,
   Platform,
   ActivityIndicator
 } from 'react-native'
+import ViewPager from "@react-native-community/viewpager";
 
 /**
  * Default styles
@@ -652,7 +652,7 @@ export default class extends Component {
        )
     }
     return (
-      <ViewPagerAndroid ref={this.refScrollView}
+      <ViewPager ref={this.refScrollView}
         {...this.props}
         initialPage={this.props.loop ? this.state.index + 1 : this.state.index}
         onPageScrollStateChanged={this.onPageScrollStateChanged}
@@ -660,7 +660,7 @@ export default class extends Component {
         key={pages.length}
         style={[styles.wrapperAndroid, this.props.style]}>
         {pages}
-      </ViewPagerAndroid>
+      </ViewPager>
     )
   }
 
